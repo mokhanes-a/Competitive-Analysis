@@ -1,12 +1,12 @@
 # COMPETITIVE ANALYSIS
 
-A competitor analysis tool that leverages multimodal AI and web search capabilities to analyze product images, extract features, and identify competitive pricing across online marketplaces.
+A competitor analysis tool that leverages multimodal AI and web search capabilities to analyze product name, product images, extract features, and identify competitive pricing across online marketplaces.
 
 ## Overview
 
 This project demonstrates how to:
 - Analyze product images using NeuroLink AI to extract product names and features
-- Build intelligent search queries combining user input and AI analysis
+- Build intelligent search queries combining user input and AI image analysis
 - Search for product prices using SerpAPI (Google Shopping)
 - Display price comparison results in a formatted CLI table
 

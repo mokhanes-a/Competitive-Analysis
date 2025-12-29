@@ -23,7 +23,7 @@ interface SerpApiResponse {
   };
 }
 
-// Keep output English-only by stripping non-ASCII characters
+
 function keepEnglish(text: string): string {
   if (!text) return "";
   // Remove characters outside basic Latin (this removes other scripts like Devanagari, Tamil, etc.)

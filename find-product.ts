@@ -1,6 +1,6 @@
 /**
  * Find Product Features Module
- * Analyzes text and/or images to extract product features using NeuroLink SDK
+ * Analyzes text and images to extract product features using NeuroLink SDK
  */
 
 import { NeuroLink } from "@juspay/neurolink";
@@ -84,7 +84,7 @@ function validateProductInputs(options: any): void {
  */
 export async function findProductFeatures(options: any = {}): Promise<any> {
   try {
-    // Validate inputs (now allows all inputs to be empty)
+    // Validate inputs 
     validateProductInputs(options);
 
     const { productName, productModel, specification, images, config = {} } = options;
@@ -175,7 +175,7 @@ function buildSearchQuery(userText: string, imageText: string): string {
   const userWords = userText.toLowerCase().split(/\s+/).filter(word => word.length > 0);
   const imageWords = imageText.toLowerCase().split(/\s+/).filter(word => word.length > 0);
 
-  // Find words in image text that are not in user text
+  
   const uniqueImageWords = imageWords.filter(word =>
     !userWords.includes(word) &&
     word.length > 2 && // Filter out very short words
@@ -191,5 +191,4 @@ function buildSearchQuery(userText: string, imageText: string): string {
   return uniqueWords.join(' ').trim();
 }
 
-// Export default
 export default findProductFeatures;
