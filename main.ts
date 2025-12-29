@@ -24,7 +24,7 @@ async function main() {
 
     const findResult = await findProductFeatures({
       productName: "IQOO neo 10r",
-      mode: "",
+      productModel: "",
       specification: "12 + 256",
       images: ["test/test1.jpeg"]
     }) as ProductSearchResult;

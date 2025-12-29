@@ -26,7 +26,7 @@ function readImageBuffers(imagePaths: string[]): Buffer[] {
  * Validates input options for product search
  * @param {Object} options - Input options
  * @param {string} [options.productName] - Product name
- * @param {string} [options.mode] - Product mode
+ * @param {string} [options.productModel] - Product model
  * @param {string} [options.specification] - Product specification
  * @param {string[]} [options.images] - Array of image file paths
  * @throws {Error} If inputs are invalid
@@ -36,15 +36,15 @@ function validateProductInputs(options: any): void {
     throw new Error('Options must be an object');
   }
 
-  const { productName, mode, specification, images } = options;
+  const { productName, productModel, specification, images } = options;
 
   // Validate text inputs if provided
   if (productName !== undefined && typeof productName !== 'string') {
     throw new Error('productName must be a string if provided');
   }
 
-  if (mode !== undefined && typeof mode !== 'string') {
-    throw new Error('mode must be a string if provided');
+  if (productModel !== undefined && typeof productModel !== 'string') {
+    throw new Error('productModel must be a string if provided');
   }
 
   if (specification !== undefined && typeof specification !== 'string') {
@@ -74,7 +74,7 @@ function validateProductInputs(options: any): void {
  * Builds a product search query from user inputs and image analysis
  * @param {Object} options - Input options
  * @param {string} [options.productName] - Product name from user
- * @param {string} [options.mode] - Product mode/model from user
+ * @param {string} [options.productModel] - Product model from user
  * @param {string} [options.specification] - Product specification from user
  * @param {string[]} [options.images] - Array of image file paths
  * @param {Object} [options.config] - Additional configuration
@@ -87,11 +87,11 @@ export async function findProductFeatures(options: any = {}): Promise<any> {
     // Validate inputs (now allows all inputs to be empty)
     validateProductInputs(options);
 
-    const { productName, mode, specification, images, config = {} } = options;
+    const { productName, productModel, specification, images, config = {} } = options;
     const { provider = 'google-ai', model = 'gemini-2.5-flash' } = config;
 
     // Combine user text inputs
-    const userText = [productName, mode, specification].filter(Boolean).join(' ');
+    const userText = [productName, productModel, specification].filter(Boolean).join(' ');
 
     // Extract product name from images
     let imageProductName = '';
