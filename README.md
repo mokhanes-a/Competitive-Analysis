@@ -602,14 +602,14 @@ type ShoppingResult = {
 
 ### Configuration Options
 
-| Option               | Type    | Default        | Required | Description                              |
-| -------------------- | ------- | -------------- | -------- | ---------------------------------------- |
-| `productName`        | string  | -              | Yes       | Product name from user input             |
-| `productModel`       | string  | -              | Optiona   | Product model or variant                 |
-| `specification`      | string  | -              | Optional  | Technical specifications                 |
-| `images`             | string[]| -              | Optional  | Array of image file paths                |
-| `config.provider`    | string  | "google-ai"    |   -       | AI provider for analysis                 |
-| `config.model`       | string  | "gemini-2.5-flash" |   -    | AI model for image analysis              |
+| Option               | Type    | Default        | Description                              |
+| -------------------- | ------- | -------------- | ---------------------------------------- |
+| `productName`        | string  | -              | Product name from user input             |
+| `productModel`       | string  | -              | Product model or variant                 |
+| `specification`      | string  | -              | Technical specifications                 |
+| `images`             | string[]| -              | Array of image file paths                |
+| `config.provider`    | string  | "google-ai"    | AI provider for analysis                 |
+| `config.model`       | string  | "gemini-2.5-flash" | AI model for image analysis              |
 
 ### Analysis Quality Settings
 
