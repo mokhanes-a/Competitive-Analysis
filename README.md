@@ -1,8 +1,3 @@
----
-title: Competitive Analysis Tool
-description: AI-powered competitor analysis tool that leverages multimodal AI and web search capabilities to analyze product images, extract features, and identify competitive pricing across online marketplaces
-keywords: competitive analysis, product analysis, ai image analysis, price comparison, multimodal ai, serpapi, neurolink, marketplace analysis
----
 
 # Competitive Analysis Tool
 
