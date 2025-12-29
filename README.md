@@ -335,7 +335,6 @@ const comparisonResults = await analyzer.compareProducts([
 console.table(comparisonResults);
 ```
 
-### Example 4: Integration with Business Intelligence
 
 ```typescript
 import { findProductFeatures } from "./find-product.ts";
@@ -431,8 +430,7 @@ const ci = new CompetitiveIntelligence();
 const report = await ci.generateReport("Sony WH-1000XM5", "./sony-headphones.jpg");
 console.log("Competitive Intelligence Report Generated:", report);
 ```
-
-### Example 5: Error Handling & Resilience
+### Example 4: Error Handling & Resilience
 
 ```typescript
 import { findProductFeatures } from "./find-product.ts";
@@ -606,12 +604,12 @@ type ShoppingResult = {
 
 | Option               | Type    | Default        | Required | Description                              |
 | -------------------- | ------- | -------------- | -------- | ---------------------------------------- |
-| `productName`        | string  | -              | No       | Product name from user input             |
-| `productModel`       | string  | -              | No       | Product model or variant                 |
-| `specification`      | string  | -              | No       | Technical specifications                 |
-| `images`             | string[]| -              | No       | Array of image file paths                |
-| `config.provider`    | string  | "google-ai"    | No       | AI provider for analysis                 |
-| `config.model`       | string  | "gemini-2.5-flash" | No    | AI model for image analysis              |
+| `productName`        | string  | -              | Yes       | Product name from user input             |
+| `productModel`       | string  | -              | Optiona   | Product model or variant                 |
+| `specification`      | string  | -              | Optional  | Technical specifications                 |
+| `images`             | string[]| -              | Optional  | Array of image file paths                |
+| `config.provider`    | string  | "google-ai"    |   -       | AI provider for analysis                 |
+| `config.model`       | string  | "gemini-2.5-flash" |   -    | AI model for image analysis              |
 
 ### Analysis Quality Settings
 
@@ -656,11 +654,11 @@ const detailedInput = {
 
 **Input Quality Guidelines:**
 
-| Input Type     | Quality Level | Example                                      | Expected Results |
-| -------------- | ------------- | -------------------------------------------- | ---------------- |
-| Product Name   | High          | "Samsung Galaxy S24 Ultra 512GB"             | Precise matches  |
-| Specifications | High          | "SM-S928B 12GB RAM 512GB Storage S Pen"      | Technical matches |
-| Images         | High          | High-res product photos                      | Accurate AI analysis |
+| Input Type     | Example                                      | Expected Results |
+| -------------- | -------------------------------------------- | ---------------- |
+| Product Name   | "Samsung Galaxy S24 Ultra 512GB"             | Precise matches  |
+| Specifications | "SM-S928B 12GB RAM 512GB Storage S Pen"      | Technical matches |
+| Images         | product photos                      | Accurate AI analysis |
 
 #### 2. Image Preparation
 
@@ -721,14 +719,6 @@ const results = await Promise.all(
 );
 ```
 
-#### 4. Cost vs. Accuracy Tradeoffs
-
-| Configuration         | Accuracy | Cost    | Use Case                    |
-| --------------------- | -------- | ------- | --------------------------- |
-| Name + Specs + Image  | Highest  | High    | Competitive intelligence   |
-| Name + Specs          | High     | Medium  | Quick market research       |
-| Image Only            | Medium   | Low     | Bulk product identification |
-| Name Only             | Low      | Lowest  | Basic availability checks   |
 
 ## Error Handling & Validation
 
@@ -808,32 +798,6 @@ async function robustAnalysis(options: any) {
 }
 ```
 
-## Token & Cost Information
-
-### AI Provider Costs
-
-| Provider    | Model             | Cost per 1K tokens | Free Tier    | Notes                  |
-| ----------- | ----------------- | ------------------ | ------------ | ---------------------- |
-| Google AI   | Gemini 2.5 Flash  | $0.0015 input      | 60 requests/min | Image analysis included |
-
-### Search Provider Costs
-
-| Provider | Plan     | Requests/Month | Cost    | Features                     |
-| -------- | -------- | -------------- | ------- | ---------------------------- |
-| SerpAPI  | Free     | 100            | $0      | Basic Google Shopping        |
-| SerpAPI  | Basic    | 5,000          | $39/mo  | Advanced location targeting  |
-| SerpAPI  | Pro      | 25,000         | $149/mo | Multiple search engines      |
-
-> **Note:** SerpAPI costs depend on usage volume. Google AI costs are for input tokens (images count as tokens).
-
-### Operational Costs
-
-| Operation Type       | Estimated Cost | Frequency      | Notes                          |
-| -------------------- | -------------- | -------------- | ------------------------------ |
-| Image Analysis       | $0.002-0.005   | Per product    | Depends on image size/complexity |
-| Price Search         | $0.005-0.01    | Per query      | SerpAPI cost per request       |
-| Batch Analysis (10)  | $0.05-0.10     | Daily          | Cost for competitive monitoring |
-| Weekly Report        | $0.20-0.50     | Weekly         | Comprehensive market analysis   |
 
 ## Working with Analysis Results
 
@@ -945,7 +909,6 @@ console.log("Generated query:", analysis.searchQuery);
 | Supported formats       | JPEG, PNG, WebP only                 | Convert other formats              |
 | AI provider options     | Google AI only                       | No alternative providers currently |
 | Search region           | India-focused (Google Shopping)      | Manual region configuration        |
-| Concurrent requests     | Limited by API quotas                | Implement request queuing          |
 
 ## Testing
 
@@ -1011,11 +974,6 @@ describe("Competitive Analysis Integration", () => {
 });
 ```
 
-## Related Features
-
-- [Image Analysis](./image-analysis.md) – Detailed image processing capabilities
-- [Price Comparison](./price-comparison.md) – Advanced pricing analysis tools
-- [Market Intelligence](./market-intelligence.md) – Comprehensive market analysis features
 
 ## Implementation Files
 
@@ -1028,4 +986,4 @@ The competitive analysis tool is implemented across these core files:
 | `main.ts`           | CLI interface and demo execution           |
 | `package.json`      | Dependencies and project configuration     |
 
-**Next:** [Advanced Analytics](./advanced-analytics.md) | [API Integration](./api-integration.md)
+
