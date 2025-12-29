@@ -44,18 +44,18 @@ This demo showcases a **three-stage pipeline** for product search and price comp
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
-║                                              COMPETITIVE ANALYSIS WORKFLOW                                             ║
+║                                              COMPETITIVE ANALYSIS WORKFLOW                                                   ║
 ╠══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╣
-║                                                                                                                       ║
-║  📥 INPUT                 🤖 PROCESSING             🔍 ANALYSIS                🌐 SEARCH                  📊 OUTPUT    ║
-║  ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐  ║
-║  │ • Product Name  │────▶│ • NeuroLink AI   │────▶│ • Query Builder  │────▶│ • SerpAPI Search │────▶│ • Price Table   │  ║
-║  │ • Specifications│     │ • Image Analysis │     │ • Text Combine   │     │ • Google Shopping│     │ • CLI Display   │  ║
-║  │ • Product Image │     │ • Gemini 2.5     │     │ • Smart Keywords │     │ • Indian Sites   │     │ • ₹ Format      │  ║
-║  └─────────────────┘     └─────────────────┘     └─────────────────┘     └─────────────────┘     └─────────────────┘  ║
-║                                                                                                                       ║
-║  🔄 Data Flow: User Input → AI Analysis → Query Generation → Web Search → Formatted Results                           ║
-║                                                                                                                       ║
+║                                                                                                                              
+║   📥 INPUT               🤖 PROCESSING           🔍 ANALYSIS             🌐 SEARCH               📊 OUTPUT                    
+║  ┌─────────────────┐   ┌──────────────────┐   ┌──────────────────┐   ┌──────────────────┐   ┌─────────────────┐          
+║  │ • Product Name  │──▶│ • NeuroLink AI   │──▶│ • Query Builder  │──▶│ • SerpAPI Search │──▶│ • Price Table   │         
+║  │ • Specifications│   │ • Image Analysis │   │ • Text Combine   │   │ • Google Shopping│   │ • CLI Display   │         
+║  │ • Product Image │   │ • Gemini 2.5     │   │ • Smart Keywords │   │ • Indian Sites   │   │ • ₹ Format      │         
+║  └─────────────────┘   └──────────────────┘   └──────────────────┘   └──────────────────┘   └─────────────────┘          
+║                                                                                                                       
+║  🔄 Data Flow: User Input → AI Analysis → Query Generation → Web Search → Formatted Results                           
+║                                                                                                                       
 ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
 ```
 
